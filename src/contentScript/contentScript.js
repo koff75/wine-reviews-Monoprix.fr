@@ -21,7 +21,8 @@ function initializeScript() {
 function appendRatings() {
   const wineListItems = document.querySelectorAll('.catalog__product-style > .ui > .product-row > .sixteen > .ui')
 
-  for(let i = 4; i < wineListItems[0].children.length; i++) {  
+  // wineListItems[0].children.length
+  for(let i = 4; i < 10; i++) {  
     appendRating(wineListItems[0].children[i]);
   }
 
@@ -37,8 +38,8 @@ async function appendRating(element) {
   const wineName = typeName1 + " " + typeName2 
 
   try {
-    console.log(`Trouvé pour : ${wineName}`);
     const { score, numOfReviews, url } = await getRating(wineName);
+    console.log(`Trouvé pour : ${wineName}`);
     console.log(`Vivino: ${score} - ${numOfReviews} + ${url}`);
     const priceElement = document.createElement("a");
     priceElement.href = url;
@@ -48,7 +49,7 @@ async function appendRating(element) {
     priceElement.style.right = "14px";
 
     // element.parentElement.appendChild(priceElement);
-    element.children[4].children[0].children[0].appendChild(priceElement);
+    element.children[0].children[0].appendChild(priceElement);
   } catch (e) {
     console.error(`${wineName} is not found on Vivino`);
   }
