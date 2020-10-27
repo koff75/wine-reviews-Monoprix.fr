@@ -1,3 +1,6 @@
+## Reviews from Vivino :
+<img src="/Monoprix.fr.png" width="800">
+
 ## How to use?
 1. Execute `yarn` to install dependencies
 1. Execute `yarn build` to build extension
