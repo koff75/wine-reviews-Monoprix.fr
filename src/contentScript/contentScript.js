@@ -21,12 +21,6 @@ function initializeScript() {
 function appendRatings() {
   const wineListItems = document.querySelectorAll('.catalog__product-style > .ui > .product-row > .sixteen > .ui')
 
-  // wineListItems.forEach((item) => {
-  //   if (!item.parentNode.style.position) {
-  //     appendRating(item);
-  //   }
-  // });
-
   for(let i = 4; i < wineListItems[0].children.length; i++) {  
     appendRating(wineListItems[0].children[i]);
   }
@@ -38,8 +32,9 @@ async function appendRating(element) {
 
   //element.parentElement.style.position = "relative";
 
-  const wineName = element.querySelector("div.grocery-item-range").innerText;
-  const typeName = element.querySelector("p").innerText;
+  const typeName1 = element.querySelector("div.grocery-item-range").innerText;
+  const typeName2 = element.querySelector("p").innerText;
+  const wineName = typeName1 + " " + typeName2 
 
   try {
     console.log(`Trouvé pour : ${wineName}`);
