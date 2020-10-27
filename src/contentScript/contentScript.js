@@ -4,14 +4,6 @@ import getRating from "./api/getRating";
 function initializeScript() {
   console.log("STARTING");
 
-  // const shouldInititialize = window.location.search.includes(
-  //   "categoryLevel1=Vin"
-  // );
-
-  // if (!shouldInititialize) {
-  //   return;
-  // }
-
   appendRatings();
 
   // can't use MutationObserver unfortunately :(
@@ -22,7 +14,7 @@ function appendRatings() {
   const wineListItems = document.querySelectorAll('.catalog__product-style > .ui > .product-row > .sixteen > .ui')
 
   // wineListItems[0].children.length
-  for(let i = 4; i < 10; i++) {  
+  for(let i = 4; i < wineListItems[0].children.length; i++) {  
     appendRating(wineListItems[0].children[i]);
   }
 
